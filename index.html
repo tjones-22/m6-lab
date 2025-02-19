@@ -3,15 +3,60 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Fancy letterheaded paper</title>
+    <title>Letterheaded Paper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
-    
+    <script defer src="/js/main.js"></script>
   </head>
   <body>
 
     <article>
-      <h1>Awesome<br>Company</h1>
+     
+      <div class="header">
+        <h1>Awesome<br>Company</h1>
+      </div>
 
+      <div class="title">
+        <h1>Lorem Ipsum</h1>
+        <p>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam animi necessitatibus sapiente facere accusamus nihil cumque cum laborum. Quae sint quibusdam commodi obcaecati quis eligendi consectetur excepturi recusandae."</p>
+      </div>
+
+      <div class="content">
+        <section class="left">
+          <h2>What is Lorem Ipsum?</h2>
+          <p><strong>Lorem ipsum.</strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam animi necessitatibus sapiente facere accusamus nihil cumque cum laborum. Quae sint quibusdam commodi obcaecati quis eligendi consectetur excepturi recusandae. Sequi, labore.
+            Sapiente maiores alias id fuga, ratione a soluta. Enim obcaecati voluptatibus exercitationem ad, temporibus consequatur qui magnam saepe iusto, tempore debitis vel a quia laudantium? Incidunt impedit suscipit quod hic.</p>
+          <h2>Where does it come from?</h2>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam animi necessitatibus sapiente facere accusamus nihil cumque cum laborum. Quae sint quibusdam commodi obcaecati quis eligendi consectetur excepturi recusandae. Sequi, labore.
+            Sapiente maiores alias id fuga, ratione a soluta. Enim obcaecati voluptatibus exercitationem ad, temporibus consequatur qui magnam saepe iusto, tempore debitis vel a quia laudantium? Incidunt impedit suscipit quod hic.</p>
+        </section>
+        
+        <section class="right">
+          <h2>Why do we use it?</h2>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam animi necessitatibus sapiente facere accusamus nihil cumque cum laborum. Quae sint quibusdam commodi obcaecati quis eligendi consectetur excepturi recusandae. Sequi, labore.
+            Sapiente maiores alias id fuga, ratione a soluta. Enim obcaecati voluptatibus exercitationem ad, temporibus consequatur qui magnam saepe iusto, tempore debitis vel a quia laudantium? Incidunt impedit suscipit quod hic.</p>
+          <h2>Where can I get some?</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam animi necessitatibus sapiente facere accusamus nihil cumque cum laborum. Quae sint quibusdam commodi obcaecati quis eligendi consectetur excepturi recusandae. Sequi, labore.</p>
+          <!-- Radio button selection and button -->
+          <form id="optionForm">
+           <input type="number" name="quantity" id="quantityInput" required value="1" min="1">
+            <div class="radio-div">
+              <label><input type="radio" name="choice" value="paragraph"> paragraph</label><br>
+              <label><input type="radio" name="choice" value="byte"> byte</label><br>
+              <label><input type="radio" name="choice" value="word"> word</label><br>
+              <label><input type="radio" name="choice" value="word"> list</label><br>
+  
+          </div>
+           
+            <button type="button" onclick="showSelection()">Generate Lorem Ipsum</button>
+          </form>
+        </section>
+      </div>
+
+      <!-- Footer with company address -->
       <address>
         <p>The Awesome Company</p>
         <p>102-112 Frail Bend Bridge<br>

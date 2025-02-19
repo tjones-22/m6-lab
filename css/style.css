@@ -1,5 +1,8 @@
+/* Global styles */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -11,23 +14,49 @@ body {
   background: #ccc;
 }
 
+/* Main article styles */
 article {
   width: 210mm;
   height: 297mm;
   margin: 20px auto;
   position: relative;
+  background-color: white !important;
+  border-top: 1mm solid #900;
+  border-bottom: 1mm solid #900;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  
+  /* Background images */
+  background: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent 30%, transparent 70%, rgba(0, 0, 0, 0.2)), 
+    url('/img/top.png') top center no-repeat, 
+    url('/img/bottom.png') bottom center no-repeat;
+  background-size: cover, contain, contain;
 }
 
-address {
-  position: absolute;
-  bottom: 8mm;
-  right: 20mm;
+/* Fallback background for browsers that do not support multiple backgrounds */
+@supports not (background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent 30%)) {
+  article {
+    background: url('/img/top.png') top center no-repeat;
+    background-size: contain;
+  }
 }
 
-h1 {
+/* Header with the company logo */
+.header {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  background-image: url('/img/top.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+/* Logo */
+.header > h1 {
   position: absolute;
-  top: 12mm;
-  left: 20mm;
+  top: 20px;
+  left: 20px;
   width: 128px;
   height: 128px;
   font-size: 20px;
@@ -36,6 +65,111 @@ h1 {
   padding: 44px 0;
   color: white;
   text-shadow: 1px 1px 1px black;
+  background-image: url('/img/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  z-index: 3;
+  
+  /* Drop shadow using filter */
+  /* filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5)); */
+  
+  /* Drop shadow alternative for cross-browser compatibility */
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+h1,h2{
+  font-family: "Mea Culpa", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-/* Your CSS below here */
+.title{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+height:10vh;
+padding: 1.5rem;
+font-size: 40px;
+}
+.title > p{
+  width: 75%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+  font-size:15px
+}
+
+
+/* Two-column layout */
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10mm;
+  height:fit-content;
+  padding: 1.5rem;
+  margin-top: 2vh;
+}
+
+
+.content p{
+  text-align: justify;
+  width:100%;
+  display: block;;
+}
+.left > p{
+  font: size 12px;
+ 
+}
+
+.left, .right {
+  width: 48%;
+
+}
+
+
+/* Address styles */
+address {
+  position: absolute;
+  bottom: 15mm;
+  right: 5mm;
+  text-align: left;
+  font-size: 14px;
+  color: #000;
+ 
+ 
+}
+
+/* Radio form styles */
+form {
+  margin-top: 20px;
+}
+
+#optionForm{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height:15vh;
+
+}
+.radio-div{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height:10vh;
+}
+button {
+  display: block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #900;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #700;
+}
